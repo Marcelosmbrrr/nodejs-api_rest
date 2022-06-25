@@ -1,10 +1,10 @@
 // Express
-const express = require("express");
+const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 // Custom
-const ApiRoutes = require("./routes/api") (app);
+const ApiRoutes = require("./routes/api");
 
 // Enable CORS for origin
 app.use(cors({
