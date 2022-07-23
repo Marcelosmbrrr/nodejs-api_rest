@@ -4,11 +4,11 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 // Custom
-const ApiRoutes = require("./routes/api");
+const ApiRoutes = require("./src/routes/api");
 
 // Enable CORS for origin
 app.use(cors({
-    origin: "localhost:8081"
+    origin: "localhost:3000"
 }));
 
 // parse application/json
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
-app.use("/api", ApiRoutes);
+app.use("/", ApiRoutes);
 
 // Init app
-app.listen(8081);
+app.listen(3000);

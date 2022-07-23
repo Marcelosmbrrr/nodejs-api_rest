@@ -2,8 +2,8 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    database: 'nodejs_api_rest',
+    host: 'database',
+    database: 'api',
     user: 'root',
     password: 'root'
 });

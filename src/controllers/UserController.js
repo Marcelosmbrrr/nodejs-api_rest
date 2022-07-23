@@ -24,7 +24,7 @@ const UserController = {
     },
     findOne(req, res) {
 
-        db.query("SELECT * FROM users WHERE id = ?", [req.body.id], (error, result) => {  
+        db.query("SELECT * FROM users WHERE id = ?", [req.body.id], (error, result) => {
 
             if (error) {
                 res.status(500).send({
@@ -41,9 +41,9 @@ const UserController = {
         });
 
     },
-    createUser() {
+    createUser(req, res) {
 
-        db.query("INSERT INTO users VALUES (?,?,?)", [req.body.name, req.body.sex, req.body.email], (error, result) => {   
+        db.query("INSERT INTO users VALUES (?,?,?)", [req.body.name, req.body.sex, req.body.email], (error, result) => {
 
             if (error) {
                 res.status(500).send({
@@ -61,7 +61,7 @@ const UserController = {
 
 
     },
-    updateOne(request, id) {
+    updateOne(req, res) {
 
         db.query("UPDATE SET name = ?, sex = ?, email = ? WHERE id = ?", [req.body.name, req.body.sex, req.body.email, req.body.id], (error, result) => {
 
@@ -80,7 +80,7 @@ const UserController = {
         });
 
     },
-    deleteOne(id) {
+    deleteOne(req, res) {
 
         db.query("DELETE FROM users WHERE id = ?", [req.body.id], (error, result) => {
 
