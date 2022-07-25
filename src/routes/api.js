@@ -1,10 +1,12 @@
 // Express
 const express = require("express");
-const router = express.Router();
+var router = express.Router();
 // Controller
 const UserController = require("../controllers/UserController");
 
-router.route("/", (req, res) => res.send("NodeJS + Express"));
+router.get('/', function (req, res) {
+    res.send('NodeJS + Express!!');
+});
 router.route("/user").get(UserController.findAll).post(UserController.createUser);
 router.route("/user/:id").get(UserController.findOne).patch(UserController.updateOne).delete(UserController.deleteOne);
 

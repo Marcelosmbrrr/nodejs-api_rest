@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 // Custom
-const ApiRoutes = require("./src/routes/api");
+const routes = require("./src/routes/api");
 
 // Enable CORS for origin
 app.use(cors({
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
-app.use("/", ApiRoutes);
+app.use("/api", routes);
 
 // Init app
 app.listen(3000);
